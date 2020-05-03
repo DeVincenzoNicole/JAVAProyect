@@ -1,22 +1,29 @@
 
 package vista;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import javax.swing.JInternalFrame;
 
 
 public class MenuPrincipal extends javax.swing.JFrame {
 
+    
     public MenuPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
+        FondoMenuPrincipal fondo = new FondoMenuPrincipal();
+        this.add(fondo, BorderLayout.CENTER);
+        this.pack();
+
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        VentanaPrincipal = new javax.swing.JDesktopPane();
+        VentanaPrincipal = new javax.swing.JPanel();
+        fondoMenuPrincipal1 = new vista.FondoMenuPrincipal();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -39,21 +46,32 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        VentanaPrincipal.setBackground(new java.awt.Color(51, 51, 51));
-        VentanaPrincipal.setPreferredSize(new java.awt.Dimension(990, 640));
+        VentanaPrincipal.setMaximumSize(new java.awt.Dimension(3000, 2000));
+        VentanaPrincipal.setPreferredSize(new java.awt.Dimension(1000, 660));
+
+        javax.swing.GroupLayout fondoMenuPrincipal1Layout = new javax.swing.GroupLayout(fondoMenuPrincipal1);
+        fondoMenuPrincipal1.setLayout(fondoMenuPrincipal1Layout);
+        fondoMenuPrincipal1Layout.setHorizontalGroup(
+            fondoMenuPrincipal1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1000, Short.MAX_VALUE)
+        );
+        fondoMenuPrincipal1Layout.setVerticalGroup(
+            fondoMenuPrincipal1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 630, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout VentanaPrincipalLayout = new javax.swing.GroupLayout(VentanaPrincipal);
         VentanaPrincipal.setLayout(VentanaPrincipalLayout);
         VentanaPrincipalLayout.setHorizontalGroup(
             VentanaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addComponent(fondoMenuPrincipal1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         VentanaPrincipalLayout.setVerticalGroup(
             VentanaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 640, Short.MAX_VALUE)
+            .addComponent(fondoMenuPrincipal1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jMenuBar1.setBackground(new java.awt.Color(102, 102, 102));
+        jMenuBar1.setBackground(new java.awt.Color(26, 19, 22));
         jMenuBar1.setPreferredSize(new java.awt.Dimension(280, 40));
 
         jMenu1.setForeground(new java.awt.Color(255, 255, 255));
@@ -214,15 +232,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(VentanaPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+            .addComponent(VentanaPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(VentanaPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(VentanaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-
-        VentanaPrincipal.getAccessibleContext().setAccessibleName("");
-        VentanaPrincipal.getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -243,6 +258,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         VentasForm vf = new VentasForm();
         System.out.println("Ingresando a VentasForm");
         CentrarVentana(vf);
+        
     }//GEN-LAST:event_itmNuevaVtaActionPerformed
 
     private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
@@ -281,7 +297,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         CajaDiariaForm cdf = new CajaDiariaForm();
-        CentrarVentana(cdf);
+       CentrarVentana(cdf);
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
@@ -291,12 +307,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Creo el metodo Centrar Ventana
     
-    void CentrarVentana(JInternalFrame frame){
+   void CentrarVentana(JInternalFrame frame){
             VentanaPrincipal.add(frame);
             Dimension dimension = VentanaPrincipal.getSize();
             Dimension Dframe = frame.getSize();
-            frame.setLocation((dimension.width-Dframe.height)/2,(dimension.height-Dframe.width)/2);
+            frame.setLocation((dimension.width-Dframe.width)/2,(dimension.height-Dframe.height)/2);
             frame.show();
+ 
     }
     
     
@@ -305,7 +322,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-public static void main(String args[]){
+   public static void main(String args[]){
             
             java.awt.EventQueue.invokeLater(new Runnable() {
                 public void run() {
@@ -314,7 +331,8 @@ public static void main(String args[]){
             });
         }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public static javax.swing.JDesktopPane VentanaPrincipal;
+    public static javax.swing.JPanel VentanaPrincipal;
+    private vista.FondoMenuPrincipal fondoMenuPrincipal1;
     private javax.swing.JMenuItem itmLibroDiario;
     private javax.swing.JMenuItem itmNuevaVta;
     private javax.swing.JMenu jMenu1;
